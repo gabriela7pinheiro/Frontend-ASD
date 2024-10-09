@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Gestão de Clínicas Estéticas</title>
+
+    <!-- Fonte Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- Link para o seu CSS customizado -->
+</head>
+<body>
+    <!-- Cabeçalho fixo -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">   
+                <img src="img/logo2.png" alt="Logo da Clínica" class="navbar-logo">
+            </a>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Página Inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profissionais.html">Encontre seu profissional</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicos">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobrenos.html">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="LGPD.html">LGPD</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    
+<!-- Hero Section -->
+<header class="hero-section text-center text-white d-flex flex-column justify-content-center align-items-center">
+    <div class="container animate-fade-in">
+        
+        <!-- Barra de Pesquisa -->
+        <form class="d-flex justify-content-center search-bar" id="searchForm">
+            <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" id="searchInput">
+            <button class="btn btn-search" type="submit">Buscar</button>
+        </form>
+
+        <h1 class="display-4 mt-4">Promovendo Equidade no Acesso aos Cuidados Estéticos</h1>
+        <p class="lead">Conectando clínicas estéticas e pessoas em situação de vulnerabilidade social para um acesso mais justo aos serviços.</p>
+        <a href="sobrenos.html" class="btn btn-primary btn-lg mt-3">Saiba Mais</a>
+    </div>
+</header>
+
+
+    <!-- Informações sobre Inclusão Social -->
+    <section class="info-section py-5 bg-light">
+        <div class="container">
+            <h2>Inclusão Social</h2>
+            <p>Nosso software promove a inclusão social, facilitando o acesso a serviços estéticos para pessoas em situação de vulnerabilidade. Clínicas podem oferecer serviços a preços reduzidos ou gratuitos para quem precisa.</p>
+        </div>
+    </section>
+    <!-- Destaques de Serviços -->
+    <section id="servicos" class="services-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-4 ">Serviços em Destaque</h2>
+            <div class="row" id="serviceList">
+                
+                <div class="col-md-4 service-item">
+                    <a href="infoagenda.html" class="card-link">
+                    <div class="card animate-fade-in text-center">
+                        <img src="img/home.png" class="card-img-top" alt="Serviço 1">
+                        <div class="card-body">
+                            <h5 class="card-title" >Gestão de Agendamentos</h5>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 service-item animate-fade-in text-center">
+                    <a href="profissionais.html" class="card-link">        
+                    <div class="card">
+                        <img src="img/estetica2.jpg" class="card-img-top" alt="Serviço 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Conexão com Instituições</h5>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+                <div class="col-md-4 service-item animate-fade-in text-center">
+                    <a href="#" class="card-link">
+                    <div class="card">
+                        <img src="img/negra.jpg" class="card-img-top" alt="Serviço 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Procedimentos</h5>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agendamento 
+    <section id="agendamento" class="news-section py-5 bg-light text-center">
+        <div class="container">
+            <h2 class="mb-4">Faça seu Agendamento Agora</h2>
+            <a href="contato.html" class="btn btn-primary btn-lg">Agendar</a>
+        </div>
+    </section> -->
+
+    <!-- Testemunhos e Histórias de Sucesso -->
+     <section class="testimonials-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Testemunhos e Histórias de Sucesso</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <blockquote class="blockquote">
+                        <p>"O software me ajudou a encontrar uma clínica que oferecia serviços estéticos a preços acessíveis. Uma verdadeira mudança de vida!"</p>
+                        <footer class="blockquote-footer">Cliente satisfeito</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-6">
+                    <blockquote class="blockquote">
+                        <p>"Agora, posso ajudar pessoas em vulnerabilidade social com meus serviços estéticos. Esse software facilitou toda a gestão."</p>
+                        <footer class="blockquote-footer">Dono de clínica</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+
+    </section>
+
+
+
+    <!-- Contato Rápido -->
+    <footer class="text-center py-4 bg-dark text-white">
+        <p>Email: aestheticservicedesign@gmail.com</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="https://www.instagram.com/estetica_asd/" target="_blank" class="text-white">Instagram</a></li>
+        </ul>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script> <!-- Link para o seu JS customizado -->
+</body>
+</html>

@@ -1,0 +1,350 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to right, #7ab4ad, #93c3bd, #abd2ce, #c3e2de, #dcf1ef);
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Fixa o fundo ao rolar */
+}
+
+body {
+    padding-top: 80px; /* Ajuste o valor de acordo com a altura da navbar */
+}
+
+
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
+    padding: 0 30px; /* Ajusta o padding para garantir que o conteúdo da navbar fique centralizado */
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo translúcido para a navbar */
+    backdrop-filter: blur(5px); /* Efeito de desfoque */
+    height: 80px; /* Ajuste a altura conforme necessário */
+}
+
+/* Centraliza o logo */
+.navbar-brand {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex: 1; /* Faz com que o logo ocupe o espaço disponível */
+}
+
+.navbar-brand:first-child {
+    left: 0;
+    margin-left: 15px; /* Espaçamento a partir da borda esquerda */
+}
+
+.navbar-brand:last-child {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navbar-toggler {
+    z-index: 1001; /* Garante que o botão de toggle esteja acima da navbar */
+}
+
+/* Define o tamanho da imagem do logo somente na página de cadastro */
+.navbar-logo {
+    height: 70px; /* Ajuste a altura conforme necessário */
+    object-fit: contain; /* Garante que a imagem mantenha a proporção */
+}
+
+/* Linha animada abaixo dos itens da navbar */
+.navbar-nav .nav-item {
+    position: relative; /* Necessário para o posicionamento absoluto do ::after */
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    padding-bottom: 5px; /* Espaço para a linha */
+    display: inline-block; /* Garante que o padding e o ::after funcionem corretamente */
+    font-size: 14px; /* Ajuste o tamanho da fonte conforme necessário */
+}
+
+/* Estilo da linha animada */
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%; /* Centraliza a linha horizontalmente */
+    bottom: 0;
+    width: 0; /* Começa com largura 0 */
+    height: 2px; /* Altura da linha */
+    background-color: #1C9997; /* Cor da linha */
+    transform: translateX(-50%); /* Ajusta a linha para que comece do centro */
+    transition: width 0.3s ease; /* Transição suave */
+}
+
+/* Efeito ao passar o mouse sobre o item da navbar */
+.navbar-nav .nav-link:hover::after {
+    width: 100%; /* Expande a linha para a largura total */
+}
+
+
+
+/* CSS específico para a página de cadastro para ajustar o tamanho do logo */
+body.cadastro .navbar-logo {
+    height: 100px; /* Ajuste a altura do logo apenas nesta página */
+}
+
+/* Estilo para o título do dropdown */
+.dropdown-header {
+    font-size: 14px; /* Ajuste o tamanho da fonte conforme necessário */
+    color: #6c757d; /* Cor cinza */
+    font-weight: 500;
+    cursor: default; /* Torna o cursor padrão para indicar que não é clicável */
+}
+
+/* Estilo para o link de esqueceu senha */
+.forgot-password {
+    font-size: 14px;
+    color: #666;
+    text-decoration: none;
+    margin-bottom: 5px; /* Reduz o espaço entre "Esqueceu sua senha?" e "Cadastre-se" */
+}
+
+.forgot-password:hover {
+    color: #0072ff;
+    text-decoration: underline;
+}
+
+/* Estilo para o link de cadastro */
+.register-link {
+    font-size: 14px;
+    color: #666;
+    text-decoration: none;
+    margin-bottom: 0; /* Remove o espaço extra abaixo do link de cadastro */
+}
+
+.register-link:hover {
+    color: #0072ff;
+    text-decoration: underline;
+}
+
+/* Definindo a animação fadeIn */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Começa um pouco abaixo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Posição normal */
+    }
+}
+
+/* Aplica a animação quando a página carrega */
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards; /* forwards para manter o estado final */
+}
+
+/* CSS para as checkboxes do formulário de cadastro */
+
+/* Estilo para o container das checkboxes */
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem; /* Espaçamento entre as checkboxes */
+}
+
+/* Estilo para a checkbox */
+.form-check-input {
+    background-color: #ffffff; /* Cor de fundo clara para destacar no fundo branco */
+    border-color: #b1b4b8; /* Borda padrão do Bootstrap */
+    border-radius: 0.25rem; /* Borda arredondada padrão */
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out; /* Transições suaves */
+}
+
+/* Cor da checkbox quando marcada */
+.form-check-input:checked {
+    background-color: #007bff; /* Cor de fundo quando marcado */
+    border-color: #007bff; /* Cor da borda quando marcado */
+}
+
+/* Estilo para o texto das labels */
+.form-check-label {
+    margin-left: 0.5rem; /* Espaçamento entre a checkbox e o texto */
+    color: #495057; /* Cor do texto das labels */
+    font-size: 0.875rem; /* Tamanho do texto (ajuste conforme necessário) */
+}
+
+/* Login Box */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 70px); /* Ajusta a altura para ocupar o restante da tela */
+    margin-top: 70px; /* Espaço para o cabeçalho fixo */
+    }
+
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* Fundo branco para o login */
+}
+
+/* Botão de login */
+.btn-primary {
+    background-color: #0072ff;
+    border-color: #0072ff;
+    margin-top: 15px; /* Adiciona espaço acima do botão */
+    margin-bottom: 20px; /* Adiciona espaço abaixo do botão */
+}
+
+.btn-primary:hover {
+    background-color: #5d00ff;
+    border-color: #5d00ff;
+}
+
+/* Inputs */
+.form-control {
+    border: 1px solid #ccc;
+}
+
+.form-control:focus {
+    border-color: #0072ff;
+    box-shadow: 0 0 5px rgba(0, 114, 255, 0.5);
+}
+
+/* Card Images */
+.card-img-top {
+    width: 100%; /* Garante que a imagem ocupe toda a largura do card */
+    height: 200px; /* Define uma altura padrão */
+    object-fit: cover; /* Garante que a imagem se ajuste sem distorções */
+}
+
+/* Exemplo de CSS para garantir que o input esteja visível e funcional */
+.search-section input {
+    pointer-events: auto; /* Certifique-se de que o input está ativado */
+}
+
+
+/* Ajusta a altura e desativa o redimensionamento da caixa de texto */
+#floatingMessage {
+    height: 150px;
+    resize: none;
+}
+
+/* Estiliza a label para aparecer como placeholder */
+.form-floating > .form-control:focus~label,
+.form-floating > .form-control:not(:placeholder-shown)~label {
+    top: -0.5rem;
+    left: 0.75rem;
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
+/* CSS Adicional para Ajuste do Espaçamento do Titulo da pagina e a navbar*/
+.hero-section {
+    padding-top: 80px; /* Ajuste conforme necessário */
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #7AB4AD 0%, #dcf1ef 100%);
+    color: #fff;
+    padding: 60px 0;
+}
+
+/* Seção Agendamentos */
+.appointment-section {
+    background-color: #fff;
+    color: #333;
+    padding: 60px 0;
+}
+
+.appointment-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.appointment-section p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    text-align: justify; /* Justificar o texto */
+    text-indent: 1.25em; /* Adicionar recuo no início dos parágrafos */
+}
+
+/* Seção de texto */
+.text-section {
+    padding: 40px;
+}
+
+/* Ícones Sociais no Rodapé */
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.social-icons a:hover {
+    color: #7AB4AD;
+}
+
+/*Para função de clicar em cima da imagem dos serviços em destaque*/
+.card-link {
+    text-decoration: none; /* Remove a sublinhado dos links */
+    color: inherit; /* Mantém a cor original do texto */
+}
+
+.card-link:hover .card {
+    transform: scale(1.05); /* Aumenta o card em 5% ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza a transição */
+}
+
+/* Estilo para a barra de pesquisa */
+.search-bar {
+    margin: 20px 5; /* Espaçamento superior e inferior */
+    width: 100%;
+    max-width: 2000px; /* Largura máxima da barra de pesquisa */
+}
+
+.search-bar .form-control {
+    border-radius: 0.375rem;
+    height: 40px; /* Altura do campo de pesquisa */
+}
+
+.search-bar .btn-search {
+    background-color: #0072ff; /* Cor do botão */
+    color: white;
+    border: none;
+    height: 38px; /* Altura do botão */
+    padding: 0 20px;
+    border-radius: 0.375rem;
+}
+
+.search-bar .btn-search:hover {
+    background-color: #005bb5; /* Cor do botão ao passar o mouse */
+}
+
+/* Responsividade botao pesquisar */
+@media (max-width: 768px) {
+    .search-bar {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .search-bar .form-control, 
+    .search-bar .btn-search {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
