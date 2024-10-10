@@ -16,7 +16,7 @@ function sendForm (){
 
 
 //Funcionamento do botão BUSCAR
-document.getElementById('searchForm').addEventListener('submit', function(event) {
+/*document.getElementById('searchForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Impede o comportamento padrão do formulário
 
     var query = document.getElementById('searchInput').value.toLowerCase();
@@ -32,4 +32,4 @@ document.getElementById('searchForm').addEventListener('submit', function(event)
     } else {
         alert('Nenhum resultado encontrado para "' + query + '".');
     }
-});
+})*/
